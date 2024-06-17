@@ -53,7 +53,9 @@ export class NoteComponent {
   }
 
   deleteNote() {
-    //this.noteService.deleteNote(this.note);
+    if (this.note.id) {
+      this.noteService.deleteNote('trash', this.note.id);
+    }
   }
 
   saveNote() {
